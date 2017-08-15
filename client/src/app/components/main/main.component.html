@@ -5,8 +5,8 @@
   <li>Current Answer: {{answer}}</li>
   </ul>
   <form>
-    <label for="userAnswer">userAnswer:</label>
-    <input type="text" #userAnswer><br>
+    <label for="answer">userAnswer:</label>
+    <input type="text" [(ngModel)]="answer" name="answer" #userAnswer><br>
 </form>
     <button (click)="onClick(userAnswer.value)">Submit</button>
 

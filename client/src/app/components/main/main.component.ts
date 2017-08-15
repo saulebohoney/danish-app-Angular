@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class MainComponent implements OnInit {
   question:string;
   answer:string;
-  score:number
+  score:number;
+  //userAnswer:string
 
   constructor() {
     console.log('constructor ran');
@@ -18,11 +19,12 @@ export class MainComponent implements OnInit {
     this.question='';
     this.answer='';
     this.score=0;
+    //this.userAnswer='';
     console.log('init ran');
   }
 
- onClick(userAnswer){
- console.log(userAnswer);
+ onClick(answer){
+ console.log(answer);
    return false;
  }
 }
