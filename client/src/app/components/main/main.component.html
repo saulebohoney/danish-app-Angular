@@ -1,0 +1,13 @@
+<h2>Learn Danish</h2>
+<p>WANT TO LEARN DANISH?</p>
+<ul>
+  <li>Current Question:{{question}}</li>
+  <li>Current Answer: {{answer}}</li>
+  </ul>
+  <form>
+    <label for="userAnswer">userAnswer:</label>
+    <input type="text" #userAnswer><br>
+</form>
+    <button (click)="onClick(userAnswer.value)">Submit</button>
+
+    <p>SCORE:{{score}}</p>
