@@ -2,6 +2,9 @@
 <p>WANT TO LEARN DANISH?</p>
 <ul>
   <li>Current Question:{{question}}</li>
+  <div *ngFor="let question of questions">
+      <h4>{{question.title}}</h4>
+      </div>
   <li>Current Answer: {{answer}}</li>
   </ul>
   <form>
