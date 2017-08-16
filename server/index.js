@@ -36,44 +36,44 @@ app.get('/api/users/:accessToken',  (req, res) => {
     });
 });
 //Google Strategy
-passport.use(
-    new GoogleStrategy({
-        clientID:  secret.CLIENT_ID,
-        clientSecret: secret.CLIENT_SECRET,
-        callbackURL: '/api/auth/google/callback'
-    },
-    (accessToken, refreshToken, profile, cb) => {
-        User.find({googleId:profile.id}, function(err,users){
-            if (!users.length){
-                User.create({
-                    googleId: profile.id,
-                    name:profile.displayName,
-                    accessToken: accessToken
-                }, function(err,user){
-                    return cb(null, user);
-                });
-            } else {
-                return cb(null,users[0]);
-            }
-        });
-    }
-    ));
+// passport.use(
+//     new GoogleStrategy({
+//         clientID:  secret.CLIENT_ID,
+//         clientSecret: secret.CLIENT_SECRET,
+//         callbackURL: '/api/auth/google/callback'
+//     },
+//     (accessToken, refreshToken, profile, cb) => {
+//         User.find({googleId:profile.id}, function(err,users){
+//             if (!users.length){
+//                 User.create({
+//                     googleId: profile.id,
+//                     name:profile.displayName,
+//                     accessToken: accessToken
+//                 }, function(err,user){
+//                     return cb(null, user);
+//                 });
+//             } else {
+//                 return cb(null,users[0]);
+//             }
+//         });
+//     }
+//     ));
 
 
 //Bearer Strategy
-passport.use(
-    new BearerStrategy(
-        (token, done) => {
-            User.findOne({accessToken: token}, function(err, user){
-                if (err) {done(err);}
-                if(!user) {
-                    return done(null, false);
-                }
-                return done(null, user);
-            });
-        }
-    )
-);
+// passport.use(
+//     new BearerStrategy(
+//         (token, done) => {
+//             User.findOne({accessToken: token}, function(err, user){
+//                 if (err) {done(err);}
+//                 if(!user) {
+//                     return done(null, false);
+//                 }
+//                 return done(null, user);
+//             });
+//         }
+//     )
+// );
 
 //Google Auth
 app.get('/api/auth/google',
