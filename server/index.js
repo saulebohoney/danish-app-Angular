@@ -108,7 +108,7 @@ app.get('/api/me',
 );
 
 app.get('/api/questions',
-    passport.authenticate('bearer', {session: false}),
+    //passport.authenticate('bearer', {session: false}),
     (req, res) => {
         Question
         .find()
