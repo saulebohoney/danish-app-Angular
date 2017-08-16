@@ -31,7 +31,7 @@ app.get('/api/users/:accessToken',  (req, res) => {
     .then(user =>{
         return res.json(user);
     })
-    .catch(err => {
+        .catch(err => {
         res.status(500).json({error: 'Something went wrong!!!'});
     });
 });
