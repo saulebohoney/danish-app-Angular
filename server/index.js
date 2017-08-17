@@ -5,6 +5,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const BearerStrategy = require('passport-http-bearer').Strategy;
 const mongoose = require('mongoose');
 const bodyParser = require ('body-parser');
+const cors = require('cors');
 
 mongoose.Promise = global.Promise;
 
@@ -24,6 +25,7 @@ const app = express();
 
 app.use(passport.initialize());
 app.use(bodyParser.json());
+app.use(cors());
 
 app.get('/api/users/:accessToken',  (req, res) => {
     User

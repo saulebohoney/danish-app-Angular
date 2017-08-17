@@ -5,12 +5,12 @@
   <div *ngFor="let question of questions">
       <h4>{{question.title}}</h4>
       </div>
-  <li>Current Answer: {{answer}}</li>
+  <li>Current Answer: {{value}}</li>
   </ul>
   <form>
-    <label for="answer">userAnswer:</label>
-    <input type="text" [(ngModel)]="answer" name="answer" #userAnswer><br>
+    <label for="value">userAnswer:</label>
+    <input type="text" [(ngModel)]="value" name="value" #userAnswer><br>
 </form>
-    <button (click)="onClick(userAnswer.value)">Submit</button>
+    <button (click)="onClick()">Submit</button>
 
     <p>SCORE:{{score}}</p>

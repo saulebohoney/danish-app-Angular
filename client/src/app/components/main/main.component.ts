@@ -7,10 +7,12 @@ import {DataService} from '../../services/data.service'
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  question:string;
-  answer:string;
+  question:any;
+  value:string;
   score:number;
   questions:any;
+  questionIndex:number=0;
+ 
   //userAnswer:string
 
   constructor(private dataService:DataService) {
@@ -18,23 +20,41 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.question='';
-    this.answer='';
+    this.question=0;
+    this.value='';
     this.score=0;
+    this.questions=[];
+    
     //this.userAnswer='';
     console.log('init ran');
 
     this.dataService.getQuestions().subscribe((questions)=>
-    {this.questions=questions
-
-      console.log(questions);
+    {this.question=questions[this.questionIndex].question;
+     // this.answer=questions[0].answer;
+     this.questions=questions;
+    console.log(questions);
+    //console.log(this.answer);
     });
   }
 
- onClick(answer){
- console.log(answer);
-   return false;
- }
+ onClick(){
+ //  event.stopPropagation();
+   console.log(this.question);
+   if (this.value === this.questions[this.questionIndex].answer){
+    //let correct = questions[0].answer;
+     alert("correct!");
+   }
+    else{
+      alert ("incorrect");
+    }
+  console.log(this.questions, this.questionIndex);
+    // this.question+1,
+    // value
+//  console.log(answer);
+//    return false;
+//  }
+
+}
 }
 
 

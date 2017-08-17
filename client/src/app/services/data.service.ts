@@ -12,7 +12,7 @@ export class DataService {
 
   }
   getQuestions(){
-      let url ='http://localhost3001/api/questions'
+      let url ='http://localhost:3001/api/questions'
     return this.http.get(url)
     .map(res =>res.json());
 
