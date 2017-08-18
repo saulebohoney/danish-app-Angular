@@ -15,7 +15,7 @@ This is a full-stack web application made by Avi and Saule, two full-time Thinkf
 ## Technology used
 
 Front-end technologies
-* React, Redux
+* Angular 4.0.0
 Server technologies
 * NodeJS, GoogleOAuth, Passport
 Data Persistence
@@ -26,5 +26,3 @@ Development Environment
 * Visual Studio Code, Google Chrome, Postman
 
 ## Links
-
-Home Page ([here](https://language-avi-saule.herokuapp.com/))
